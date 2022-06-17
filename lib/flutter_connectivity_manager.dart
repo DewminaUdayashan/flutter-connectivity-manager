@@ -5,4 +5,8 @@ class FlutterConnectivityManager {
   Future<String?> getPlatformVersion() {
     return FlutterConnectivityManagerPlatform.instance.getPlatformVersion();
   }
+
+  Future<void> initialize()async{
+    return FlutterConnectivityManagerPlatform.instance.initialize();
+  }
 }

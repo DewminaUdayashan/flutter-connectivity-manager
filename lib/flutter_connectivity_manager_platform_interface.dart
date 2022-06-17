@@ -26,4 +26,8 @@ abstract class FlutterConnectivityManagerPlatform extends PlatformInterface {
   Future<String?> getPlatformVersion() {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
+
+  Future<void> initialize()async{
+    throw UnimplementedError('platformVersion() has not been implemented.');
+  }
 }
