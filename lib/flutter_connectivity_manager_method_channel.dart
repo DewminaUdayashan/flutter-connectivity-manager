@@ -14,4 +14,11 @@ class MethodChannelFlutterConnectivityManager extends FlutterConnectivityManager
     final version = await methodChannel.invokeMethod<String>('getPlatformVersion');
     return version;
   }
+
+
+  @override
+  Future<void> initialize()async{
+    await methodChannel.invokeMethod('initialize');
+  }
+
 }
