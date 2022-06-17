@@ -1,5 +1,7 @@
 package lk.dewapps.flutter_connectivity_manager;
 
+import android.content.Context;
+
 import androidx.annotation.NonNull;
 
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
@@ -15,11 +17,13 @@ public class FlutterConnectivityManagerPlugin implements FlutterPlugin, MethodCa
   /// This local reference serves to register the plugin with the Flutter Engine and unregister it
   /// when the Flutter Engine is detached from the Activity
   private MethodChannel channel;
+  private Context context;
 
   @Override
   public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
     channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), "flutter_connectivity_manager");
     channel.setMethodCallHandler(this);
+    context = flutterPluginBinding.getApplicationContext();
   }
 
   @Override
